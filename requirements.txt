@@ -1,0 +1,19 @@
+# Core scientific dependencies
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=1.5.0
+matplotlib>=3.7.0
+scikit-learn>=1.2.0
+pyyaml>=6.0
+h5py>=3.8.0
+
+# Deep learning (PyTorch for FNO)
+torch>=2.0.0
+
+# GUI & visualization
+streamlit>=1.30.0
+plotly>=5.15.0
+
+# Jupyter environment
+jupyter>=1.0.0
+ipywidgets>=8.0.0

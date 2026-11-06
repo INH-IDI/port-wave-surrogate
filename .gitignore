@@ -1,0 +1,46 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extension / distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Heavy datasets and binary outputs
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.pth
+*.pt
+*.keras
+*.tar
+*.gz
+*.zip
+*.7z
+*.dep
+*.asc
+*.tif
+*.vtk
+*.log
+
+# Output binary meshes
+output_vtk/
+
+# Keep data folder READMEs
+!data/**/README.md
+!data/**/.gitkeep

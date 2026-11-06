@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portsurrogate"
+version = "1.0.0"
+description = "High-fidelity neural operator and surrogate modeling pipeline for port wave agitation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Luis Zamorano", email = "luiszamorano@inh.cl" },
+    { name = "Yarko Niño", email = "ynino@ing.uchile.cl" }
+]
+keywords = [
+    "fourier-neural-operator",
+    "funwave-tvd",
+    "port-wave-agitation",
+    "surrogate-modeling",
+    "u-net",
+    "mda",
+    "coastal-engineering"
+]
+dependencies = [
+    "numpy>=1.23.0",
+    "scipy>=1.9.0",
+    "pandas>=1.5.0",
+    "matplotlib>=3.6.0",
+    "pyyaml>=6.0",
+    "torch>=2.0.0",
+    "scikit-learn>=1.1.0",
+    "h5py>=3.7.0"
+]
+
+[project.optional-dependencies]
+gui = [
+    "streamlit>=1.30.0",
+    "plotly>=5.15.0"
+]
+tf = [
+    "tensorflow>=2.15.0",
+    "keras-unet-collection>=0.1.13"
+]
+all = [
+    "streamlit>=1.30.0",
+    "plotly>=5.15.0",
+    "tensorflow>=2.15.0",
+    "keras-unet-collection>=0.1.13",
+    "jupyter>=1.0.0"
+]
+
+[project.scripts]
+portsurrogate-gui = "portsurrogate.cli:run_gui"
+portsurrogate-mda = "portsurrogate.cli:run_mda"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["portsurrogate*"]

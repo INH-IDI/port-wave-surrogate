@@ -1,0 +1,89 @@
+# Configuration for Port of San Antonio (Paper Case Study)
+# Paper: "Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"
+# Journal: Coastal Engineering Journal (Taylor & Francis)
+
+port:
+  name: "San Antonio"
+  country: "Chile"
+  description: "Port of San Antonio, Chile. Primary commercial port exposed to South Pacific swells focused by a submarine canyon."
+
+grid:
+  # Computational domain in FUNWAVE-TVD
+  n_rows: 425           # Nglob (Y cells)
+  n_cols: 380           # Mglob (X cells)
+  dx: 5.0               # meters
+  dy: 5.0               # meters
+  
+  # Crop for Neural Operator & U-Net surrogates (360 x 360 cells = 1.8 x 1.8 km)
+  crop:
+    r0: 33
+    r1: 393
+    c0: 20
+    c1: 380
+
+boundary_conditions:
+  # Nautical direction to Cartesian wavemaker angle: ThetaPeak = nautical_to_cartesian_offset - Dir
+  nautical_to_cartesian_offset: 270.0
+  depth_wavemaker: 26.0 # meters (virtual buoy extraction depth)
+  freq_min: 0.02        # Hz
+  freq_max: 0.25        # Hz
+
+control_sites:
+  # Control stations in the harbor basin (coords in full grid: [row, col])
+  A:
+    name: "Site A (Outer fairway / intermediate)"
+    coords_full: [93, 220]
+    depth_m: 12.5
+  B:
+    name: "Site B (Approach channel)"
+    coords_full: [163, 204]
+    depth_m: 11.2
+  C:
+    name: "Site C (Harbor entrance - exposed)"
+    coords_full: [176, 261]
+    depth_m: 9.8
+  D:
+    name: "Site D (Breakwater head - diffraction zone)"
+    coords_full: [92, 282]
+    depth_m: 8.5
+  E:
+    name: "Site E (Inner sheltered basin / berthing)"
+    coords_full: [215, 310]
+    depth_m: 7.2
+
+data_paths:
+  # Relative paths from the port_wave_surrogate directory to existing project datasets
+  bathy_mod3: "../dataset_train/bat/5x5_malla_moloBatiMod3.dep"
+  bathy_mod2: "../dataset_train/bat/5x5_malla_moloBatiMod2.dep"
+  hindcast_dir: "../dataset_train/hindcast_SanAnto_origen"
+  hindcast_unsteady: "../dataset_train/hindcast_SanAnto_origen/run_unsteady"
+  maxdiss_par: "../dataset_train/maxdiss_3000_par.txt"
+  funwave_train_dataset: "../dataset_train/funwave_maxdiss_dataset.npz"
+  funwave_test_h5: "../dataset_test/funwave/lote/funwave_2021_dataset.h5"
+  gt_2021_clean: "../benchmark/prep/gt_2021_clean.npz"
+  prep_dir: "../benchmark/prep"
+  checkpoints_dir: "../Etapa1/ii_redes_fno_steady/modelos_maxdiss"
+  unet_checkpoints_dir: "../Etapa1/iii_redes_unet/modelos_maxdiss"
+
+training_defaults:
+  fno:
+    modes1: 45
+    modes2: 45
+    width: 32           # Compact v2 setting (Table 2 & 4 in paper)
+    padding: 4
+    epochs: 600
+    batch_size: 4
+    learning_rate: 0.001
+    weight_decay: 0.0001
+    seed: 20260903
+  unet:
+    filters: [64, 128, 256, 512]
+    epochs: 600
+    batch_size: 4
+    learning_rate: 0.0001
+    seed: 20260903
+  mda:
+    n_cases: 3000
+    subsets: [500, 1000, 2000, 3000]
+    seed_val: 7
+    seed_test: 21

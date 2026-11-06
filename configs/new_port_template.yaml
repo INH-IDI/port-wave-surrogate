@@ -1,0 +1,79 @@
+# Template Configuration for Implementing the Pipeline in a New Port
+# Use this template when extending the surrogate modeling chain to another domain (e.g., Valparaíso, Arica, San Vicente, Iquique)
+
+port:
+  name: "New_Port_Name"
+  country: "Country_Name"
+  description: "Brief description of the coastal area, bathymetric features, and harbor geometry."
+
+grid:
+  # Computational domain in FUNWAVE-TVD (or local numerical solver)
+  n_rows: 400           # Total rows (Y direction)
+  n_cols: 400           # Total columns (X direction)
+  dx: 5.0               # Spatial step in X (meters)
+  dy: 5.0               # Spatial step in Y (meters)
+  
+  # Crop region for the neural operator (square domain recommended, e.g. 256x256, 360x360, or 384x384)
+  crop:
+    r0: 20
+    r1: 380
+    c0: 20
+    c1: 380
+
+boundary_conditions:
+  # Wavemaker orientation: Cartesian theta = offset - Dir (nautical)
+  # Standard offshore W boundary: offset = 270.0; offshore S boundary: offset = 180.0
+  nautical_to_cartesian_offset: 270.0
+  depth_wavemaker: 30.0 # Depth at the virtual buoy / generation line (meters)
+  freq_min: 0.02        # Minimum spectral frequency (Hz)
+  freq_max: 0.25        # Maximum spectral frequency (Hz)
+
+control_sites:
+  # Critical operability / berthing stations inside the harbor domain
+  # Specify coords in full grid [row, col] and local depth (meters)
+  Station_1:
+    name: "Harbor Entrance"
+    coords_full: [150, 180]
+    depth_m: 14.0
+  Station_2:
+    name: "Main Berthing Pier"
+    coords_full: [220, 260]
+    depth_m: 11.5
+  Station_3:
+    name: "Inner Sheltered Basin"
+    coords_full: [280, 310]
+    depth_m: 8.0
+
+data_paths:
+  # Paths to your input files and outputs for the new port
+  bathy_file: "data/bathymetry/port_bathy.dep"
+  hindcast_file: "data/hindcast/swan_virtual_buoy_1990_2020.txt"
+  mda_output_dir: "data/mda"
+  funwave_cases_dir: "simulations/funwave_cases"
+  funwave_train_dataset: "data/datasets/funwave_train_dataset.npz"
+  funwave_test_dataset: "data/datasets/funwave_test_dataset.h5"
+  prep_dir: "data/prep"
+  checkpoints_dir: "models/checkpoints"
+
+training_defaults:
+  fno:
+    modes1: 45
+    modes2: 45
+    width: 32           # Recommended width: 32 (compact) or 64 (full)
+    padding: 4
+    epochs: 600
+    batch_size: 4
+    learning_rate: 0.001
+    weight_decay: 0.0001
+    seed: 20260903
+  unet:
+    filters: [64, 128, 256, 512]
+    epochs: 600
+    batch_size: 4
+    learning_rate: 0.0001
+    seed: 20260903
+  mda:
+    n_cases: 2000       # 2000 cases capture ~95% of performance as shown in paper
+    subsets: [500, 1000, 2000]
+    seed_val: 7
+    seed_test: 21
