@@ -1,18 +1,23 @@
 # PortWaveSurrogate: High-Fidelity Neural Operators for Real-Time Port Wave Forecasting
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Status: Under Review](https://img.shields.io/badge/Status-Under_Review-yellow.svg)](#)
 [![Python: 3.10+](https://img.shields.io/badge/python-3.10%2B-brightgreen.svg)](https://www.python.org/)
 [![PyTorch: 2.x](https://img.shields.io/badge/PyTorch-2.x-orange.svg)](https://pytorch.org/)
 
-Code repository, modular Python library (`portsurrogate`), peer-review audit scripts, interactive Streamlit GUI, and Jupyter Notebook tutorial accompanying the paper:
+> **Manuscript Status / Estado del Manuscrito:**  
+> 📄 **Currently Under Review** in *Coastal Engineering Journal* (Taylor & Francis).  
+> *Title:* **"Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"**  
+> *Authors:* Luis Zamorano and Yarko Niño  
+> *Affiliations:* Instituto Nacional de Hidráulica (INH) & Universidad de Chile
 
-> **"Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"**  
-> *Luis Zamorano and Yarko Niño*  
-> *Coastal Engineering Journal (Taylor & Francis)*
+This repository contains the peer-review reproduction code, the modular Python library (`portsurrogate`), an interactive Streamlit GUI, and a complete tutorial notebook accompanying the submitted manuscript.
 
 ---
 
 ## Executive Summary (Español)
+
+> **Nota:** Este repositorio acompaña el artículo científico actualmente **en revisión por pares** (*Under Review*) en *Coastal Engineering Journal* (Taylor & Francis). Su propósito es garantizar la total transparencia y reproducibilidad de los resultados durante y después del arbitraje científico.
 
 Este paquete proporciona:
 1. **Auditoría transparente del artículo**: Scripts ordenados paso a paso (`paper_reproduction/`) que reproducen todas las tablas cuantitativas (Tablas 1 a 4) y figuras (Figs. 2 a 12) del manuscrito.
@@ -173,17 +178,18 @@ To implement this workflow in another port (e.g., Valparaíso, San Vicente, Aric
 
 ---
 
-## Citation
+## Citation / Cita
 
-If you use this library or methodology in your research, please cite:
+If you use this library, code, or methodology in your research, please cite the preprint/manuscript:
 
 ```bibtex
 @article{zamorano2026fno,
-  title   = {Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates},
-  author  = {Zamorano, Luis and Ni{\~n}o, Yarko},
-  journal = {Coastal Engineering Journal},
-  year    = {2026},
-  publisher = {Taylor \& Francis}
+  title        = {Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates},
+  author       = {Zamorano, Luis and Ni{\~n}o, Yarko},
+  journal      = {Coastal Engineering Journal},
+  year         = {2026},
+  note         = {Under Review},
+  publisher    = {Taylor \& Francis}
 }
 ```
 

@@ -1,8 +1,12 @@
 # Reviewer Guide & Code Traceability — Coastal Engineering Journal
 
-This directory provides the ordered, peer-review-ready reproduction scripts for the paper:
-**"Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"**  
-*Luis Zamorano & Yarko Niño (Coastal Engineering Journal, Taylor & Francis)*.
+> 🔍 **Notice to Peer Reviewers:**  
+> This directory is specifically prepared for the peer-review process of the manuscript:  
+> **"Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"**  
+> *Authors: Luis Zamorano & Yarko Niño*  
+> **Status:** Under Review in *Coastal Engineering Journal* (Taylor & Francis).  
+>
+> We welcome reviewers' audit and scrutiny. All tables, figures, hyperparameter sweeps, and out-of-distribution evaluations can be independently verified using the step-by-step scripts below. If any additional ablation experiment, parameter variation, or raw simulation is desired during review, please contact `i-d-i@inh.cl` / `lzamorano@uchile.cl` and it will be provided promptly.
 
 ---
 

@@ -1,7 +1,9 @@
 # Acceso a Datasets y Modelos Preentrenados / Dataset & Model Access
 
-> **Aviso de Disponibilidad / Availability Notice:**
-> Los archivos de datos voluminosos y los checkpoints de las redes neuronales **no están incluidos directamente en este repositorio debido a restricciones de tamaño de GitHub** (>25 GB en total). Todos los conjuntos de datos, batimetrías y pesos preentrenados están disponibles **a pedido** (*available upon request*) para fines de investigación académica y auditoría del manuscrito.
+> **Aviso para Revisores del Manuscrito (Under Review):**  
+> Este repositorio acompaña el artículo *"Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"*, actualmente **en revisión por pares** en *Coastal Engineering Journal* (Taylor & Francis).  
+> 
+> Debido a las restricciones de tamaño de GitHub (>25 GB en total), los archivos de datos voluminosos y los checkpoints de las redes neuronales no se alojan en el repositorio Git. **Cualquier revisor o investigador puede solicitar acceso inmediato a los datasets completos y checkpoints para fines de auditoría académica** contactando directamente a los autores.
 
 ---
 
