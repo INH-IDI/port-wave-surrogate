@@ -1,6 +1,6 @@
 # Configuration for Port of San Antonio (Paper Case Study)
 # Paper: "Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"
-# Journal: Coastal Engineering Journal (Taylor & Francis)
+# Status: Manuscript submitted for publication
 
 port:
   name: "San Antonio"

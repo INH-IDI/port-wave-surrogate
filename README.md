@@ -1,23 +1,23 @@
 # PortWaveSurrogate: High-Fidelity Neural Operators for Real-Time Port Wave Forecasting
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status: Under Review](https://img.shields.io/badge/Status-Under_Review-yellow.svg)](#)
+[![Status: Submitted](https://img.shields.io/badge/Status-Submitted-blue.svg)](#)
 [![Python: 3.10+](https://img.shields.io/badge/python-3.10%2B-brightgreen.svg)](https://www.python.org/)
 [![PyTorch: 2.x](https://img.shields.io/badge/PyTorch-2.x-orange.svg)](https://pytorch.org/)
 
 > **Manuscript Status / Estado del Manuscrito:**  
-> 📄 **Currently Under Review** in *Coastal Engineering Journal* (Taylor & Francis).  
+> 📄 **Submitted for publication / Manuscrito enviado para publicación**  
 > *Title:* **"Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"**  
 > *Authors:* Luis Zamorano and Yarko Niño  
 > *Affiliations:* Instituto Nacional de Hidráulica (INH) & Universidad de Chile
 
-This repository contains the peer-review reproduction code, the modular Python library (`portsurrogate`), an interactive Streamlit GUI, and a complete tutorial notebook accompanying the submitted manuscript.
+This repository contains the reproduction code, the modular Python library (`portsurrogate`), an interactive Streamlit GUI, and a complete tutorial notebook accompanying the research manuscript.
 
 ---
 
 ## Executive Summary (Español)
 
-> **Nota:** Este repositorio acompaña el artículo científico actualmente **en revisión por pares** (*Under Review*) en *Coastal Engineering Journal* (Taylor & Francis). Su propósito es garantizar la total transparencia y reproducibilidad de los resultados durante y después del arbitraje científico.
+> **Nota:** Este repositorio acompaña el artículo científico *"Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates"* (enviado para publicación). Su propósito es garantizar la total transparencia y reproducibilidad metodológica del estudio.
 
 Este paquete proporciona:
 1. **Auditoría transparente del artículo**: Scripts ordenados paso a paso (`paper_reproduction/`) que reproducen todas las tablas cuantitativas (Tablas 1 a 4) y figuras (Figs. 2 a 12) del manuscrito.
@@ -180,16 +180,14 @@ To implement this workflow in another port (e.g., Valparaíso, San Vicente, Aric
 
 ## Citation / Cita
 
-If you use this library, code, or methodology in your research, please cite the preprint/manuscript:
+If you use this library, code, or methodology in your research, please cite the manuscript:
 
 ```bibtex
-@article{zamorano2026fno,
+@misc{zamorano2026fno,
   title        = {Real-time operational wave forecasting in ports using Fourier Neural Operators as high-fidelity surrogates},
   author       = {Zamorano, Luis and Ni{\~n}o, Yarko},
-  journal      = {Coastal Engineering Journal},
   year         = {2026},
-  note         = {Under Review},
-  publisher    = {Taylor \& Francis}
+  note         = {Manuscript submitted for publication}
 }
 ```
 
